@@ -6,10 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
-  searchParams: {
+  searchParams: Promise<{
     code: string;
     name: string;
-  };
+  }>;
 }
 
 export default async function CountryPage({ searchParams }: Props) {
