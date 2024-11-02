@@ -2,6 +2,14 @@
 
 This project consist in two small applications to provide information about countries. The project includes a Backend built with Node.js (Express) and a Frontend built with React (Next.js) using TypeScript.
 
+
+## Demo
+>[!IMPORTANT]
+The app services are hosted on free platforms, so please be patient as loading times may vary.
+
+https://country-info-app-ferbouchet.vercel.app
+
+
 ## Project Overview
 
 ### Tech Stack
