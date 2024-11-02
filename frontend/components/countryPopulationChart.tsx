@@ -1,9 +1,12 @@
 "use client";
 
-import { Bar, BarChart, XAxis } from "recharts";
-
-import { ChartConfig, ChartContainer } from "@/components/ui/chart";
-
+import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
 const chartConfig = {
   value: {
     label: "Population",
@@ -16,20 +19,34 @@ interface Props {
 }
 export default function CountryPopulationChart({ populationCounts }: Props) {
   return (
-    <ChartContainer
-      config={chartConfig}
-      className="min-h-[200px] w-full max-w-lg"
-    >
-      <BarChart accessibilityLayer data={populationCounts}>
+    <ChartContainer config={chartConfig}>
+      <AreaChart
+        accessibilityLayer
+        data={populationCounts}
+        margin={{
+          left: 12,
+          right: 12,
+        }}
+      >
+        <CartesianGrid vertical={false} />
         <XAxis
           dataKey="year"
           tickLine={false}
-          tickMargin={10}
           axisLine={false}
+          tickMargin={8}
         />
-
-        <Bar dataKey="value" fill={"hsl(var(--chart-1))"} radius={4} />
-      </BarChart>
+        <ChartTooltip
+          cursor={false}
+          content={<ChartTooltipContent indicator="line" />}
+        />
+        <Area
+          dataKey="value"
+          type="natural"
+          fill="hsl(var(--chart-2))"
+          fillOpacity={0.4}
+          stroke="hsl(var(--chart-2))"
+        />
+      </AreaChart>
     </ChartContainer>
   );
 }
