@@ -1,3 +1,4 @@
+import CountryPopulationChart from "@/components/countryPopulationChart";
 import { Button } from "@/components/ui/button";
 import { getCountryById } from "@/lib/actions/getCountryById";
 import { countryFullInfo } from "@/types";
@@ -17,6 +18,7 @@ export default async function CountryPage({ searchParams }: Props) {
 
   return (
     <section className="mt-5 lg:mt-10">
+      <div></div>
       <div>
         <h2 className="text-2xl font-medium">{name}</h2>
       </div>
@@ -44,6 +46,12 @@ export default async function CountryPage({ searchParams }: Props) {
             <Button variant={"link"}>{country.commonName}</Button>
           </Link>
         ))}
+      </div>
+      <div>
+        <h3>Population:</h3>
+        <CountryPopulationChart
+          populationCounts={country.countryPopulation.data.populationCounts}
+        />
       </div>
     </section>
   );
