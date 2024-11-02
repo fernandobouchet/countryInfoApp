@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
+import ThemeToggle from "./ui/themeToggle";
 
 export default function Nav() {
   return (
@@ -14,6 +15,9 @@ export default function Nav() {
               <Button variant="ghost" asChild>
                 <Link href="/">Home</Link>
               </Button>
+            </li>
+            <li>
+              <ThemeToggle />
             </li>
           </ul>
         </nav>
