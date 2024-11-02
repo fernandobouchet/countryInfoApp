@@ -21,6 +21,12 @@ export default async function CountryPage({ searchParams }: Props) {
       <div className="flex flex-col">
         <div className="flex flex-col">
           <h2 className="text-2xl font-medium">{name}</h2>
+          <p className="text-secondary-foreground">
+            Official name: {country.countryInfo.officialName}
+          </p>
+          <p className="text-secondary-foreground">
+            Region: {country.countryInfo.region}
+          </p>
         </div>
         <div className="py-8 mx-auto">
           <div className="relative w-80 h-auto">
@@ -34,7 +40,7 @@ export default async function CountryPage({ searchParams }: Props) {
           </div>
         </div>
         <div>
-          <h3>Borders:</h3>
+          <h3>Borders countries:</h3>
           {country.countryInfo.borders.map((country) => (
             <Link
               key={country.countryCode}
@@ -48,7 +54,7 @@ export default async function CountryPage({ searchParams }: Props) {
           ))}
         </div>
       </div>
-      <div className="w-full max-w-lg">
+      <div className="w-full max-w-xl">
         <div>
           <h3>Population</h3>
           <p className="text-secondary-foreground">
