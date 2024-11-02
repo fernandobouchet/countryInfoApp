@@ -1,4 +1,4 @@
-Country Information Application
+# Country Information Application
 
 This project consist in two small applications to provide information about countries. The project includes a Backend built with Node.js (Express) and a Frontend built with React (Next.js) using TypeScript.
 
